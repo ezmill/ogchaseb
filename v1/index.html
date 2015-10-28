@@ -1,0 +1,93 @@
+<html>
+<head>	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>CHASE B</title>
+</head>
+<body>
+	<div id="main">
+		<div class="bg">
+			<!-- <img src="img/grain/03.png" style="width:100%; opacity: 0.5; position: absolute;" alt=""> -->
+		</div>
+		<h1 class="chase-b">
+			OG CHASE B
+		</h1>
+		<div id="socials">
+			<a target="_blank" href="https://twitter.com/OGCHASEB"><i class="fa fa-twitter"></i></a>
+			<a target="_blank" href="https://soundcloud.com/ogchaseb"><i class="fa fa-soundcloud"></i></a>
+			<a target="_blank" href="https://www.facebook.com/ogchaseb"><i class="fa fa-facebook"></i></a>
+			<a target="_blank" href="https://instagram.com/ogchaseb/"><i class="fa fa-instagram"></i></a>
+			<!-- <a href=""><i class="fa"></i></a> -->
+		</div>
+		<div id="imgContainer">
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/Thunder.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var thunderSounds = [
+				{
+					src: "audio/1.mp3"
+				},
+				{
+					src: "audio/2.mp3"
+				},
+				{
+					src: "audio/3.mp3"
+				}
+			]
+			var lightningBolts = [
+				"bolt1.svg",
+				"bolt2.svg",
+				"bolt3.svg",
+				"bolt4.svg",
+				"bolt5.svg",
+				"bolt6.svg",
+				"bolt7.svg"
+			]
+			container = document.getElementById("main");
+
+
+			var drawReq;
+			var timer = 0.0;
+			thunder = new Thunder(thunderSounds, lightningBolts);	
+
+			$(window).on("vclick", function(e){
+				var isIcon = (e.target.nodeName == "I") ? true : false;
+				if(!isIcon){
+					e.preventDefault();
+				}
+				// console.log(e);
+				if(!$("#socials").hasClass("fadeIn")){
+					$("#socials a").css("pointer-events", "auto");
+					$("#socials").addClass("fadeIn");
+				}
+				if(thunder.playing){return;}
+				thunder.seedAudio();
+				drawReq = requestAnimationFrame(draw);
+				setTimeout(function(){
+					cancelAnimationFrame(drawReq);
+					thunder.stop();
+					thunder.imgIndex++;
+					if(thunder.imgIndex>lightningBolts.length){
+						thunder.imgIndex = 0;
+					}
+					thunder.audioIndex++;
+					if(thunder.audioIndex>thunderSounds.length){
+						thunder.audioIndex = 0;
+					}
+				}, 7000);
+			})
+			function draw(){
+				drawReq = requestAnimationFrame(draw);
+				thunder.go();
+			}
+		})
+	</script>
+</body>
+</html>

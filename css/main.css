@@ -7,7 +7,7 @@ div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default{
 	font-size:50px;
 	font-weight:normal;
 	outline:0;
-	color: black;
+	/*color: black;*/
 	box-sizing: border-box;
 }
 @font-face{
@@ -24,8 +24,9 @@ body {
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	/*font-family: "Oswald", sans-serif;*/
-	font-family: "Fighting Spirit" ;
+	font-family: "Oswald", sans-serif;
+	color:#d76d81;
+	/*font-family: "Fighting Spirit" ;*/
 	-webkit-transform: translateZ(0);
 	        transform: translateZ(0);
 	/*background-color: black;*/
@@ -46,7 +47,7 @@ body {
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	height: 100vh;
+	height: 300px;
 }
 .logo img{
 	display: block;
@@ -54,7 +55,7 @@ body {
 }
 #main{
 	width: 100vw;
-	height: 100vh;
+	height: 742px;
 	background-color: #161618;
 	/*background-image: url(../img/grain/03.png);*/
 /*	background-position: center;
@@ -94,26 +95,63 @@ h1.chase-b, h1.chase-b span{
 
 }
 #socials{
-	text-align: center;
-	width: 500px;
-	margin: 0;
-	left: 50%;
-	top: 50%;
-	width: 100%;
-	max-width: 100%;
-	margin-top: 100px;
-	/*pointer-events:none;*/
-	/*font-size: 400%;*/
-	position: absolute;
-	-webkit-transform: translate(-50%,-50%);
-	   -moz-transform: translate(-50%,-50%);
-	    -ms-transform: translate(-50%,-50%);
-	     -o-transform: translate(-50%,-50%);
-	        transform: translate(-50%,-50%);
+    text-align: center;
+    width: 500px;
+    margin: 0;
+    left: 50%;
+    top: 109px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 100px;
+    /* pointer-events: none; */
+    /* font-size: 400%; */
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,0%);
 }
 #socials a i {
 	color: #d86d81;
 	font-size: 75%;
+}
+#player{
+    text-align: center;
+    width: 500px;
+    margin: 0;
+    left: 50%;
+    top: 371px;
+    max-width: 100%;
+    /* margin-top: 100px; */
+    /* pointer-events: none; */
+    /* font-size: 400%; */
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,0%);
+}
+#blog{
+    text-align: center;
+    width: 500px;
+    margin: 0;
+    left: 50%;
+    top: 600px;
+    max-width: 100%;
+    /* margin-top: 100px; */
+    /* pointer-events: none; */
+    /* font-size: 400%; */
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,0%);
+}
+#blog a{
+	color: #d86d81;
 }
 .fadeIn{
 	-webkit-transition: ease-in all 3s;
