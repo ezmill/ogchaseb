@@ -23,9 +23,10 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	font-family: "Oswald", sans-serif;
 	color:#d76d81;
+	background: #161618;
 	/*font-family: "Fighting Spirit" ;*/
 	-webkit-transform: translateZ(0);
 	        transform: translateZ(0);
